@@ -4,10 +4,6 @@
 #include <stdio.h>
 #include "leakchecker.h"
 
-void *malloc(size_t);
-void free(void *);
-void track(size_t, void *, char, char);
-
 void *malloc(size_t size)
 {
     static void *(*memfunc)(size_t) = NULL;
